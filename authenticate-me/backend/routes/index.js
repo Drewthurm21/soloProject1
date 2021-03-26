@@ -39,7 +39,7 @@ if (process.env.NODE_ENV === 'production') {
 module.exports = router;
 
 /*                                      TEST ROUTE                        */
-router.get('/hello/world', function (req, res) {
+router.get('/hello/world', (req, res) => {
   res.cookie('XSRF-TOKEN', req.csrfToken());
   res.send('Hello World!');
 });

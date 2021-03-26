@@ -9,7 +9,7 @@ const asyncHandler = require('express-async-handler');
 
 /*                           TEST ROUTES FOR USER AUTH                           */
 
-router.post('/test', function (req, res) {
+router.post('/test', (req, res) => {
   res.json({ requestBody: req.body });
 });
 

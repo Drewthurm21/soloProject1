@@ -61,13 +61,13 @@ module.exports = (sequelize, DataTypes) => {
   /*                              DEFINE USER MODEL INSTANCE METHODS                        */
 
   //return safe user info to save to JSON web Token
-  User.prototype.toSafeObject = function () {
+  User.prototype.toSafeObject = () => {
     const { id, username, email } = this; // context will be the User instance
     return { id, username, email };
   };
 
   //return true or false for password match
-  User.prototype.validatePassword = function (password) {
+  User.prototype.validatePassword = (password) => {
     return bcrypt.compareSync(password, this.hashedPassword.toString());
   };
 
@@ -75,7 +75,7 @@ module.exports = (sequelize, DataTypes) => {
   /*                              DEFINE USER MODEL CLASS METHODS                           */
 
   //Sign a user up
-  User.signup = async function ({ username, email, password }) {
+  User.signup = async ({ username, email, password }) => {
     const hashedPassword = bcrypt.hashSync(password);
     const user = await User.create({
       username,
@@ -86,7 +86,7 @@ module.exports = (sequelize, DataTypes) => {
   };
 
   //Log a user in
-  User.login = async function ({ credential, password }) {
+  User.login = async ({ credential, password }) => {
     const { Op } = require('sequelize');
     const user = await User.scope('loginUser').findOne({
       where: {
@@ -103,7 +103,7 @@ module.exports = (sequelize, DataTypes) => {
   };
 
   //Get current user
-  User.getCurrentUserById = async function (id) {
+  User.getCurrentUserById = async (id) => {
     return await User.scope('currentUser').findByPk(id);
   };
 

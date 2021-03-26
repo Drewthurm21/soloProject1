@@ -2,7 +2,7 @@
 const express = require('express');
 const app = express()
 
-// import packages & requirements for use in app.js
+//import packages & requirements for use in app.js
 const cors = require('cors');
 const csurf = require('csurf');
 const helmet = require('helmet');
@@ -44,7 +44,6 @@ app.use(csurf({
 
 //Begin checking routes
 app.use(routes)  // Connect all the routes
-
 
 
 //ERROR HANDLING
