@@ -3,7 +3,9 @@ import * as sessionActions from '../../store/session';
 import { useDispatch, useSelector } from 'react-redux';
 import { Redirect } from 'react-router-dom';
 
-const LoginFormPage = () => {
+
+
+const LoginForm = () => {
   const dispatch = useDispatch();
   const sessionUser = useSelector(state => state.session.user);
   const [credential, setCredential] = useState('');
@@ -15,6 +17,7 @@ const LoginFormPage = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     setErrors([]);
+    console.log('this is password', password)
     return dispatch(sessionActions.login({ credential, password }))
       .catch(async (res) => {
         const data = await res.json();
@@ -47,4 +50,4 @@ const LoginFormPage = () => {
   );
 }
 
-export default LoginFormPage;
+export default LoginForm;

@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import App from './App';
 import './index.css';
 
+import * as sessionActions from './store/session'
 import { restoreCSRF, csrfFetch } from './store/csrf';
 import { Provider } from 'react-redux';
 import { BrowserRouter } from 'react-router-dom';
@@ -15,6 +16,7 @@ if (process.env.NODE_ENV !== 'production') {
 
   window.store = store;
   window.csrfFetch = csrfFetch;
+  window.sessionActions = sessionActions;
 }
 
 function Root() {

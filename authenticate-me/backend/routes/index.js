@@ -3,8 +3,6 @@ const apiRouter = require('./api')
 
 router.use('/api', apiRouter)
 
-// Static routes
-
 // Add a XSRF-TOKEN cookie if development
 if (process.env.NODE_ENV !== 'production') {
   router.get('/api/csrf/restore', (req, res) => {
