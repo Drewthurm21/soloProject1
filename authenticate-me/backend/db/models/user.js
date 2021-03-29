@@ -54,7 +54,25 @@ module.exports = (sequelize, DataTypes) => {
       },
     });
   User.associate = function (models) {
-    // associations can be defined here
+    User.hasMany(model.Like, { foreignKey: 'userId' })
+    const followee = {
+      otherKey: 'userId',
+      through: 'Follows',
+      foreignKey: 'authorId',
+      as: 'followers'
+    }
+    User.belongsToMany(model.Follow, followee)
+
+    const follower = {
+      otherKey: 'authorId',
+      through: 'Follows',
+      foreignKey: 'userId',
+      as: 'followees'
+    }
+    User.belongsToMany(model.Follow, follower)
+
+    User.hasMany(model.Story, { foreignKey: 'authorId' })
+    User.hasMany(model.Comment, { foreignKey: 'userId' })
   };
 
   /*                              DEFINE USER MODEL INSTANCE METHODS                        */

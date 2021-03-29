@@ -8,7 +8,7 @@ module.exports = {
 
       Example:
       */
-    return queryInterface.bulkInsert('People', [
+    return queryInterface.bulkInsert('Categories', [
       { category: 'Business' },
       { category: 'Travel' },
       { category: 'Sports' },
@@ -16,7 +16,6 @@ module.exports = {
       { category: 'Food' },
       { category: 'Music' },
       { category: 'Philosophy' },
-      { category: 'Religion' },
       { category: 'Tutorial' },
       { category: 'Advice' },
       { category: 'Gaming' },
@@ -40,6 +39,6 @@ module.exports = {
 
       Example:
       */
-    return queryInterface.bulkDelete('People', null, {});
+    return queryInterface.bulkDelete('Categories', null, {});
   }
 };
