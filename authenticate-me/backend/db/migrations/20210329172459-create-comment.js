@@ -18,11 +18,7 @@ module.exports = {
         references: { model: 'Stories' },
         type: Sequelize.INTEGER
       },
-      title: {
-        allowNull: false,
-        type: Sequelize.STRING(90)
-      },
-      content: {
+      comment: {
         allowNull: false,
         type: Sequelize.TEXT
       },

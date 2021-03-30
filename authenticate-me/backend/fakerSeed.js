@@ -74,18 +74,49 @@ const bcrypt = require('bcryptjs');
 
 /*                                   SEED LIKES FUNCTION                                */
 
-const seedLikes = (num) => {
+// const seedLikes = (num) => {
+//   let i = 0
+//   while (i < num) {
+//     const like = {
+//       userId: Math.floor(Math.random() * Math.floor(100)),
+//       postId: Math.floor(Math.random() * Math.floor(150)),
+//       liked: true,
+//     }
+
+//     console.log(like, ',')
+//     i++
+//   }
+// }
+
+// seedLikes(100)
+
+/*                                   SEED COMMENTS FUNCTION                                */
+
+const seedComments = (num) => {
   let i = 0
+
   while (i < num) {
-    const like = {
+    const comment = {
       userId: Math.floor(Math.random() * Math.floor(100)),
-      postId: Math.floor(Math.random() * Math.floor(150)),
-      liked: true,
+      articleId: Math.floor(Math.random() * Math.floor(150)),
+      comment: faker.lorem.sentences(1)
+    }
+    const comment2 = {
+      userId: Math.floor(Math.random() * Math.floor(100)),
+      articleId: Math.floor(Math.random() * Math.floor(150)),
+      comment: faker.lorem.sentences(3)
+    }
+    const comment3 = {
+      userId: Math.floor(Math.random() * Math.floor(100)),
+      articleId: Math.floor(Math.random() * Math.floor(150)),
+      comment: faker.lorem.sentences(5)
     }
 
-    console.log(like, ',')
+    console.log(comment, ',')
+    console.log(comment2, ',')
+    console.log(comment3, ',')
     i++
   }
 }
 
-seedLikes(100)
+seedComments(200)
