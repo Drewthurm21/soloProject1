@@ -54,14 +54,14 @@ module.exports = (sequelize, DataTypes) => {
       },
     });
   User.associate = function (models) {
-    User.hasMany(model.Like, { foreignKey: 'userId' })
+    User.hasMany(models.Like, { foreignKey: 'userId' })
     const followee = {
       otherKey: 'userId',
       through: 'Follows',
       foreignKey: 'authorId',
       as: 'followers'
     }
-    User.belongsToMany(model.Follow, followee)
+    User.belongsToMany(models.Follow, followee)
 
     const follower = {
       otherKey: 'authorId',
@@ -69,10 +69,10 @@ module.exports = (sequelize, DataTypes) => {
       foreignKey: 'userId',
       as: 'followees'
     }
-    User.belongsToMany(model.Follow, follower)
+    User.belongsToMany(models.Follow, follower)
 
-    User.hasMany(model.Story, { foreignKey: 'authorId' })
-    User.hasMany(model.Comment, { foreignKey: 'userId' })
+    User.hasMany(models.Story, { foreignKey: 'authorId' })
+    User.hasMany(models.Comment, { foreignKey: 'userId' })
   };
 
   /*                              DEFINE USER MODEL INSTANCE METHODS                        */
