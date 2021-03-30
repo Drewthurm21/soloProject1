@@ -18,6 +18,8 @@ const bcrypt = require('bcryptjs');
 //   }
 // }
 
+// seedUsers(100)
+
 /*                                SEED FOLLOWS FUNCTION                                */
 
 
@@ -26,41 +28,64 @@ const bcrypt = require('bcryptjs');
 
 //   while (i < num) {
 //     const follow = {
-//       userId: Math.ceil(Math.random() * 100),
-//       authorId: Math.ceil(Math.random() * 100),
+//       userId: Math.floor(Math.random() * Math.floor(100)),
+//       authorId: Math.floor(Math.random() * Math.floor(100)),
 
 //     }
 //     console.log(follow, ',')
 //     i++
 //   }
 // }
+
 // seedFollows(100)
 
 /*                                   SEED STORIES FUNCTION                        */
 
-let i = 0
-while (i < 50) {
-  const story = {
-    authorId: Math.floor(Math.random() * 100),
-    categoryId: Math.floor(Math.random(19) * 10) + 1,
-    title: 'Short Article',
-    content: faker.lorem.paragraphs(2)
+// const seedStories = (num) => {
+//   let i = 0
+//   while (i < num) {
+//     const story = {
+//       authorId: Math.floor(Math.random() * Math.floor(100)),
+//       categoryId: Math.floor(Math.random() * Math.floor(20)),
+//       title: 'Short Article',
+//       content: faker.lorem.paragraphs(2)
+//     }
+//     const story2 = {
+//       authorId: Math.floor(Math.random() * Math.floor(100)),
+//       categoryId: Math.floor(Math.random() * Math.floor(20)),
+//       title: 'Medium Article',
+//       content: faker.lorem.paragraphs(5)
+//     }
+//     const story3 = {
+//       authorId: Math.floor(Math.random() * Math.floor(100)),
+//       categoryId: Math.floor(Math.random() * Math.floor(20)),
+//       title: 'Long Article',
+//       content: faker.lorem.paragraphs(8)
+//     }
+
+//     console.log(story, ',')
+//     console.log(story2, ',')
+//     console.log(story3, ',')
+//     i++
+//   }
+// }
+
+// seedStories(150)
+
+/*                                   SEED LIKES FUNCTION                                */
+
+const seedLikes = (num) => {
+  let i = 0
+  while (i < num) {
+    const like = {
+      userId: Math.floor(Math.random() * Math.floor(100)),
+      postId: Math.floor(Math.random() * Math.floor(150)),
+      liked: true,
+    }
+
+    console.log(like, ',')
+    i++
   }
-  const story2 = {
-    authorId: Math.floor(Math.random() * 100),
-    categoryId: Math.floor(Math.random(19) * 10) + 1,
-    title: 'Medium Article',
-    content: faker.lorem.paragraphs(5)
-  }
-  const story3 = {
-    authorId: Math.ceil(Math.random() * 100),
-    categoryId: Math.ceil(Math.random(19) * 10) + 1,
-    title: 'Long Article',
-    content: faker.lorem.paragraphs(8)
-  }
-  console.log(story, ',')
-  console.log(story2, ',')
-  console.log(story3, ',')
-  i++
 }
 
+seedLikes(100)
