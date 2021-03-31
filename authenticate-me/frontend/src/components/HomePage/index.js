@@ -9,5 +9,4 @@ const Homepage = () => {
   )
 }
 
-export default StoryContainer;
-
+export default Homepage;

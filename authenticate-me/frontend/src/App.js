@@ -7,7 +7,7 @@ import * as sessionActions from "./store/session";
 import LoginForm from "./components/LoginForm";
 import SignupForm from "./components/SignupForm"
 import NavBar from "./components/NavBar"
-import StoryContainer from './components/StoryContainer'
+import Homepage from './components/HomePage/'
 
 function App() {
   const dispatch = useDispatch();
@@ -18,20 +18,27 @@ function App() {
 
   return (
     <>
-      <NavBar isLoaded={isLoaded} />
-      {isLoaded && (
-        <Switch>
-          <Route exact path='/'>
-            <StoryContainer />
-          </Route>
-          <Route path="/login">
-            <LoginForm />
-          </Route>
-          <Route path='/signup'>
-            <SignupForm />
-          </Route>
-        </Switch>
-      )}
+      <div className={'app-grid-container'}>
+        <div className={'navBar flex-container'}>
+          <NavBar isLoaded={isLoaded} />
+        </div>
+        {isLoaded && (
+          <Switch>
+            <Route exact path='/'>
+              <Homepage />
+            </Route>
+            <Route path="/login">
+              <LoginForm />
+            </Route>
+            <Route path='/signup'>
+              <SignupForm />
+            </Route>
+          </Switch>
+        )}
+        <div className={'footer flex-container'}>
+          this will be footer
+            </div>
+      </div>
     </>
   );
 }
