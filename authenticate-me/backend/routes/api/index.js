@@ -11,7 +11,7 @@ const storiesRouter = require('./stories.js')
 
 //GET /api/restore-user (test JWT restoration)
 router.get('/restore-user', restoreUser, (req, res) => res.json(req.user));
-router.use('/stories', storiesRouter)
+router.use('/stories', storiesRouter);
 router.use('/session', sessionRouter);
 router.use('/users', usersRouter);
 
