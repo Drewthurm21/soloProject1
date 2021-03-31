@@ -7,6 +7,7 @@ import * as sessionActions from "./store/session";
 import LoginForm from "./components/LoginForm";
 import SignupForm from "./components/SignupForm"
 import NavBar from "./components/NavBar"
+import StoryContainer from './components/StoryContainer'
 
 function App() {
   const dispatch = useDispatch();
@@ -21,8 +22,8 @@ function App() {
       {isLoaded && (
         <Switch>
           <Route exact path='/'>
-            Home Page
-        </Route>
+            <StoryContainer />
+          </Route>
           <Route path="/login">
             <LoginForm />
           </Route>

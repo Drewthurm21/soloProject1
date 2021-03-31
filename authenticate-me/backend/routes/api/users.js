@@ -34,9 +34,13 @@ router.post('/', validateSignup, asyncHandler(async (req, res) => {
 }));
 module.exports = router;
 
-router.delete('/', validateSignup, asyncHandler(async (req, res) => {
+router.delete('/', asyncHandler(async (req, res) => {
   console.log(req.body)
 }));
+
+router.get('/', asyncHandler(async (req, res) => {
+  console.log()
+}))
 
 /*                                      TEST FETCH                                      */
 
