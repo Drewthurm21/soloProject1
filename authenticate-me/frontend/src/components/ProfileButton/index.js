@@ -37,6 +37,9 @@ function ProfileButton({ user }) {
           <li>
             <Link to='/profile'>My Profile</Link>
           </li>
+          <li>
+            <Link to='/profile'>Write an Article</Link>
+          </li>
         </ul>
       )}
     </>

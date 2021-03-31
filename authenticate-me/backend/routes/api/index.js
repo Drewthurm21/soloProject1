@@ -1,19 +1,18 @@
 const router = require('express').Router();
-
-const { User } = require('../../db/models');
 const { restoreUser, setTokenCookie } = require('../../utils/auth.js');
 
 const usersRouter = require('./users.js');
 const sessionRouter = require('./session.js');
-const asyncHandler = require('express-async-handler');
 const storiesRouter = require('./stories.js')
 
 
-//GET /api/restore-user (test JWT restoration)
-router.get('/restore-user', restoreUser, (req, res) => res.json(req.user));
+//
 router.use('/stories', storiesRouter);
 router.use('/session', sessionRouter);
 router.use('/users', usersRouter);
+
+//GET /api/restore-user (test JWT restoration)
+router.get('/restore-user', restoreUser, (req, res) => res.json(req.user));
 
 module.exports = router;
 
@@ -21,6 +20,7 @@ module.exports = router;
 
 /*                           TEST ROUTES FOR USER AUTH                           */
 
+// const asyncHandler = require('express-async-handler');
 // router.post('/test', (req, res) => {
 //   res.json({ requestBody: req.body });
 // });

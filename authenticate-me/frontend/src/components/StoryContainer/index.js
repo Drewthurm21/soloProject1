@@ -12,15 +12,16 @@ const StoryContainer = () => {
   }, [dispatch])
 
   const stories = useSelector(state => state.stories.stories)
-
-  console.log(stories)
+  // const followed = stories.filter(story => story.)
 
   return (
     <>
-      {stories.map(story => {
-        return <StoryCardShort key={story.id} story={story} />
-      })}
-      <div>hey</div>
+      <div>
+        {stories?.map(story => {
+          return <StoryCardShort key={story.id} story={story} />
+        })}
+      </div>
+      <div>nope =[</div>
     </>
   )
 }

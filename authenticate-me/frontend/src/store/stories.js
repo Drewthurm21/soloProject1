@@ -17,19 +17,20 @@ export const getStories = () => async dispatch => {
   }
 };
 
+
+
 const initialState = {
   stories: []
 }
 
 const storiesReducer = (state = initialState, action) => {
-  let newState;
 
   switch (action.type) {
     case LOAD: {
-      newState = { ...state }
-      action.stories.forEach(story => (
-        newState.stories[story.id] = story))
-      return newState
+      return {
+        ...state,
+        stories: [...action.stories]
+      }
     }
     default:
       return state

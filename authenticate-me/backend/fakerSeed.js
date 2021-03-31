@@ -1,6 +1,7 @@
 const faker = require('faker')
 const bcrypt = require('bcryptjs');
 
+// const randomNumber = (num) => Math.floor(Math.random() * Math.floor(100))
 
 /*                                  USER SEED FUNCTION                                */
 
@@ -13,6 +14,7 @@ const bcrypt = require('bcryptjs');
 //       username: faker.internet.userName(),
 //       hashedPassword: bcrypt.hashSync(faker.internet.password())
 //     }
+
 //     console.log(user, ',')
 //     i++
 //   }
@@ -28,10 +30,10 @@ const bcrypt = require('bcryptjs');
 
 //   while (i < num) {
 //     const follow = {
-//       userId: Math.floor(Math.random() * Math.floor(100)),
-//       authorId: Math.floor(Math.random() * Math.floor(100)),
-
+//       userId: randomNumber(100),
+//       authorId: randomNumber(100),
 //     }
+
 //     console.log(follow, ',')
 //     i++
 //   }
@@ -45,20 +47,20 @@ const bcrypt = require('bcryptjs');
 //   let i = 0
 //   while (i < num) {
 //     const story = {
-//       authorId: Math.floor(Math.random() * Math.floor(100)),
-//       categoryId: Math.floor(Math.random() * Math.floor(20)),
+//       authorId: randomNumber(100),
+//       categoryId: randomNumber(20),
 //       title: 'Short Article',
 //       content: faker.lorem.paragraphs(2)
 //     }
 //     const story2 = {
-//       authorId: Math.floor(Math.random() * Math.floor(100)),
-//       categoryId: Math.floor(Math.random() * Math.floor(20)),
+//       authorId: randomNumber(100),
+//       categoryId: randomNumber(20),
 //       title: 'Medium Article',
 //       content: faker.lorem.paragraphs(5)
 //     }
 //     const story3 = {
-//       authorId: Math.floor(Math.random() * Math.floor(100)),
-//       categoryId: Math.floor(Math.random() * Math.floor(20)),
+//       authorId: randomNumber(100),
+//       categoryId: randomNumber(20),
 //       title: 'Long Article',
 //       content: faker.lorem.paragraphs(8)
 //     }
@@ -78,8 +80,8 @@ const bcrypt = require('bcryptjs');
 //   let i = 0
 //   while (i < num) {
 //     const like = {
-//       userId: Math.floor(Math.random() * Math.floor(100)),
-//       postId: Math.floor(Math.random() * Math.floor(150)),
+//       userId: randomNumber(100),
+//       postId: randomNumber(150),
 //       liked: true,
 //     }
 
@@ -92,31 +94,31 @@ const bcrypt = require('bcryptjs');
 
 /*                                   SEED COMMENTS FUNCTION                                */
 
-const seedComments = (num) => {
-  let i = 0
+// const seedComments = (num) => {
+//   let i = 0
 
-  while (i < num) {
-    const comment = {
-      userId: Math.floor(Math.random() * Math.floor(100)),
-      articleId: Math.floor(Math.random() * Math.floor(150)),
-      comment: faker.lorem.sentences(1)
-    }
-    const comment2 = {
-      userId: Math.floor(Math.random() * Math.floor(100)),
-      articleId: Math.floor(Math.random() * Math.floor(150)),
-      comment: faker.lorem.sentences(3)
-    }
-    const comment3 = {
-      userId: Math.floor(Math.random() * Math.floor(100)),
-      articleId: Math.floor(Math.random() * Math.floor(150)),
-      comment: faker.lorem.sentences(5)
-    }
+//   while (i < num) {
+//     const comment = {
+//       userId: randomNumber(100),
+//       articleId: randomNumber(150),
+//       comment: faker.lorem.sentences(1)
+//     }
+//     const comment2 = {
+//       userId: randomNumber(100),
+//       articleId: randomNumber(150),
+//       comment: faker.lorem.sentences(3)
+//     }
+//     const comment3 = {
+//       userId: randomNumber(100),
+//       articleId: randomNumber(150),
+//       comment: faker.lorem.sentences(5)
+//     }
 
-    console.log(comment, ',')
-    console.log(comment2, ',')
-    console.log(comment3, ',')
-    i++
-  }
-}
+//     console.log(comment, ',')
+//     console.log(comment2, ',')
+//     console.log(comment3, ',')
+//     i++
+//   }
+// }
 
-seedComments(200)
+// seedComments(200)

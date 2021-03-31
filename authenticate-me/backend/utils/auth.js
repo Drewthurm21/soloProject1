@@ -4,7 +4,7 @@ const { User } = require('../db/models')
 
 const { secret, expiresIn } = jwtConfig
 
-// Send a JWT Cookie
+// Send a JWT Cookie for auth
 const setTokenCookie = (res, user) => {
 
   // Create the token.
