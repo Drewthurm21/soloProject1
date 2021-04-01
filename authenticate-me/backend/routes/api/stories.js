@@ -11,9 +11,9 @@ router.get('/', asyncHandler(async (req, res) => {
 
 //get stories by category
 router.get('/category/:id', asyncHandler(async (req, res) => {
-  let stories = await Story.findAll({ where: { categoryId: req.params.id } })
+  let storiesByCat = await Story.findAll({ where: { categoryId: req.params.id } })
 
-  res.json({ stories })
+  res.json({ storiesByCat })
 }))
 
 //return stories by followed Authors
@@ -24,13 +24,12 @@ router.get('/followed/:id', asyncHandler(async (req, res) => {
     return author.authorId
   })
 
-  const stories = await Story.findAll({
+  const feedStories = await Story.findAll({
     where: { authorId: favAuthorIds },
     order: [['createdAt', 'DESC']]
   })
-  console.log(stories)
 
-  res.json({ stories })
+  res.json({ feedStories })
 }))
 
 //get 10 most popular stories 
@@ -62,11 +61,11 @@ router.get('/story/:id', asyncHandler(async (req, res) => {
 
 //return all stories by an author
 router.get('/byauthor/:id', asyncHandler(async (req, res) => {
-  const stories = await Story.findAll({
+  const authorStories = await Story.findAll({
     where: { authorId: req.params.id }
   })
 
-  res.json({ stories })
+  res.json({ authorStories })
 }))
 
 

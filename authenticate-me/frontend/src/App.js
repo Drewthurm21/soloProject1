@@ -8,6 +8,9 @@ import LoginForm from "./components/LoginForm";
 import SignupForm from "./components/SignupForm"
 import NavBar from "./components/NavBar"
 import Homepage from './components/HomePage/'
+import MyStories from './components/MyStories'
+import Footer from './components/Footer'
+
 
 function App() {
   const dispatch = useDispatch();
@@ -18,14 +21,17 @@ function App() {
 
   return (
     <>
-      <div className={'app-grid-container'}>
-        <div className={'flex-container'}>
-          <NavBar className={'navBar'} isLoaded={isLoaded} />
+      <div className='app-grid-container'>
+        <div className='flex-container'>
+          <NavBar className='navBar' isLoaded={isLoaded} />
         </div>
         {isLoaded && (
           <Switch>
             <Route exact path='/'>
               <Homepage />
+            </Route>
+            <Route path='/mystories'>
+              <MyStories />
             </Route>
             <Route path="/login">
               <LoginForm />
@@ -35,9 +41,7 @@ function App() {
             </Route>
           </Switch>
         )}
-        <div className={'footer flex-container'}>
-          this will be footer
-            </div>
+        <Footer />
       </div>
     </>
   );

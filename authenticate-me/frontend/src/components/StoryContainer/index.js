@@ -12,7 +12,6 @@ const StoryContainer = () => {
   }, [dispatch])
 
   const stories = useSelector(state => state.stories.stories)
-  // const followed = stories.filter(story => story.)
 
   return (
     <>
@@ -21,7 +20,6 @@ const StoryContainer = () => {
           return <StoryCardShort key={story.id} story={story} />
         })}
       </div>
-      <div>nope =[</div>
     </>
   )
 }

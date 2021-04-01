@@ -8,7 +8,7 @@ const load = (stories) => ({
   stories
 })
 
-export const getStories = () => async dispatch => {
+export const getStories = () => async (dispatch) => {
   const response = await fetch(`/api/stories`);
 
   if (response.ok) {
@@ -16,6 +16,25 @@ export const getStories = () => async dispatch => {
     dispatch(load(stories.result));
   }
 };
+
+export const getUserStories = (userId) => async (dispatch) => {
+  const response = await fetch(`/api/stories/byauthor/${userId}`)
+
+  if (response.ok) {
+    const stories = await response.json()
+
+    dispatch(load(stories.authorStories))
+  }
+}
+
+export const getFeedStories = (userId) => async (dispatch) => {
+  const response = await fetch(`/api/stories/followed/${userId}`)
+
+  if (response.ok) {
+    const stories = await response.json()
+    dispatch(load(stories.feedStories))
+  }
+}
 
 
 

@@ -32,13 +32,13 @@ function ProfileButton({ user }) {
             <Link to='/favorites'>Favorite Authors</Link>
           </li>
           <li>
-            <Link to='/myArticles'>My Articles</Link>
+            <Link to='/mystories'>My Stories</Link>
           </li>
           <li>
             <Link to='/profile'>My Profile</Link>
           </li>
           <li>
-            <Link to='/profile'>Write an Article</Link>
+            <Link to='/profile'>Write a Story</Link>
           </li>
         </ul>
       )}

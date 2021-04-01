@@ -3,7 +3,7 @@ import StoryContainer from "../StoryContainer"
 const Homepage = () => {
 
   return (
-    <div>
+    <div className='app-grid-container'>
       <StoryContainer />
     </div>
   )

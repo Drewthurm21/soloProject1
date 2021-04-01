@@ -20,9 +20,6 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.TEXT,
       allowNull: false,
     },
-    img: {
-      type: DataTypes.STRING(200)
-    }
   }, {});
   Story.associate = function (models) {
     Story.hasMany(models.Like, { foreignKey: 'postId' })
