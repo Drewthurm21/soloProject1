@@ -19,8 +19,8 @@ function App() {
   return (
     <>
       <div className={'app-grid-container'}>
-        <div className={'navBar flex-container'}>
-          <NavBar isLoaded={isLoaded} />
+        <div className={'flex-container'}>
+          <NavBar className={'navBar'} isLoaded={isLoaded} />
         </div>
         {isLoaded && (
           <Switch>
