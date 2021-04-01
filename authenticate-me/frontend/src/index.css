@@ -1,7 +1,7 @@
 /* TODO Add site wide styles */
 body {
   font-family: sans-serif;
-  background: linear-gradient(#243b55, #141e30);
+  background: #243b55
 }
 
 .app-grid-container {
@@ -15,42 +15,14 @@ body {
 .flex-container {
   position: fixed;
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
   width: 100%;
   background: linear-gradient(#243b55, #141e30);
-}
-
-.navBar {
-  display:flex;
-  justify-content: space-around;
-  border-bottom:1px solid black;
-  top: 0px;
-  margin: 0px;
-  width: 100vh;
-  background: linear-gradient(#243b55, #141e30);
-}
-
-.navBarBtn {
-  position: relative;
-  display: inline-block;
-  color: #fff;
-  padding: 10px 20px;
-  font-size: 16px;
-  text-decoration: none;
-  overflow: hidden;
-  transition: 1.5s;
-  letter-spacing: 0px
-}
-
-.navBarBtn:hover {
-  background: #03e9f4;
-  color: #fff;
-  border-radius: 5px;
-  box-shadow: 0 0 5px #03e9f4,
 }
 
 .footer{
   position: fixed;
   width: 100%;
-  bottom: 0px
+  bottom: 0px;
+  background: linear-gradient(#243b55, #141e30);
 }

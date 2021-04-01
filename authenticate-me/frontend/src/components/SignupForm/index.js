@@ -71,12 +71,12 @@ function SignupForm() {
             Confirm Password
           </label>
         </div>
-        <a onClick={handleSubmit}> Submit
+        <p onClick={handleSubmit}> Submit
           <span></span>
           <span></span>
           <span></span>
           <span></span>
-        </a>
+        </p>
       </form>
     </div>
   );

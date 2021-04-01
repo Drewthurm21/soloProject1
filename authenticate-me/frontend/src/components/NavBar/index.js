@@ -2,7 +2,7 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import { logout } from '../../store/session';
-
+import './navbar.css'
 import ProfileButton from '../ProfileButton';
 
 const Navigation = ({ isLoaded }) => {
@@ -17,8 +17,8 @@ const Navigation = ({ isLoaded }) => {
   } else {
     sessionLinks = (
       <>
-        <NavLink className={'navBarBtn'} to="/login">Log In</NavLink>
-        <NavLink className={'navBarBtn'} to="/signup">Sign Up</NavLink>
+        <NavLink className={'navbar-btn'} to="/login">Log In</NavLink>
+        <NavLink className={'navbar-btn'} to="/signup">Sign Up</NavLink>
       </>
     );
   }
@@ -31,9 +31,9 @@ const Navigation = ({ isLoaded }) => {
   return (
     <>
       <nav>
-        <NavLink className={'navBarBtn'} exact to="/">Home</NavLink>
+        <NavLink className={'navbar-btn'} exact to="/">Home</NavLink>
         {isLoaded && sessionLinks}
-        {sessionUser && <div className={'navBarBtn'} onClick={logOut}>Log Out</div>}
+        {sessionUser && <div className={'navbar-btn logout-btn'} onClick={logOut}>Log Out</div>}
       </nav>
     </>
   );

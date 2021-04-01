@@ -23,9 +23,9 @@ function ProfileButton({ user }) {
 
   return (
     <>
-      <button onClick={openMenu}>
-        <i class="fas fa-door-open"></i>
-      </button>
+      <div className='navbar-Btn' onClick={openMenu}>
+        Profile
+      </div>
       {showMenu && (
         <ul className="profile-dropdown">
           <li>

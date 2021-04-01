@@ -49,13 +49,13 @@ export const LoginForm = () => {
             Password
           </label>
         </div>
-        <a onClick={handleSubmit}>
+        <p onClick={handleSubmit}>
           <span></span>
           <span></span>
           <span></span>
           <span></span>
           Submit
-        </a>
+        </p>
       </form>
     </div>
   )

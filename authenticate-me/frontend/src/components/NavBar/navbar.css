@@ -1,0 +1,36 @@
+.navbar {
+  display:flex;
+  justify-content: space-around;
+  border-bottom:1px solid black;
+  top: 0px;
+  margin: 0px;
+  width: 100vh;
+  background: linear-gradient(#243b55, #141e30);
+}
+
+.navbar-btn {
+  border: 1px solid #03e9f4;
+  border-radius: 5px;
+  background: transparent;
+  position: relative;
+  display: inline-block;
+  padding: 10px 20px;
+  color: #fff;
+  font-size: 16px;
+  text-decoration: none;
+  overflow: hidden;
+  transition: .5s;
+  margin: 5px;
+}
+
+.navbar-btn:hover {
+  border: 0px;
+  color: #03e9f4;
+  border-radius: 5px;
+  box-shadow: 0 0 5px #03e9f4;
+}
+
+.logout-btn {
+  position:absolute;
+  justify-self: right;
+}

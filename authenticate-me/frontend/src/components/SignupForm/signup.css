@@ -65,7 +65,7 @@ body {
   font-size: 12px;
 }
 
-.signup-form-container form a {
+.signup-form-container form p {
   border: 1px solid #03e9f4;
   border-radius: 5px;
   background: transparent;
@@ -81,32 +81,32 @@ body {
   letter-spacing: 0px
 }
 
-.signup-form-container a:hover {
+.signup-form-container p:hover {
   border: 0px;
   color: #03e9f4;
   border-radius: 5px;
   box-shadow: 0 0 5px #03e9f4;
 }
 
-.signup-form-container a:hover span {
+.signup-form-container p:hover span {
   color:black
 }
 
-.signup-form-container a span {
+.signup-form-container p span {
   position: absolute;
   display: block;
 }
 
-.signup-form-container a:hover span:nth-child(1) {
+.signup-form-container p:hover span:nth-child(1) {
   top: 0;
   left: -100%;
   width: 100%;
   height: 2px;
   background: linear-gradient(90deg, transparent, #03e9f4);
-  animation: btn-anim1 1s linear infinite;
+  animation: btn-animation-1 1s linear infinite;
 }
 
-@keyframes btn-anim1 {
+@keyframes btn-animation-1 {
   0% {
     left: -100%;
   }
@@ -115,17 +115,17 @@ body {
   }
 }
 
-.signup-form-container a:hover span:nth-child(2) {
+.signup-form-container p:hover span:nth-child(2) {
   top: -100%;
   right: 0;
   width: 2px;
   height: 100%;
   background: linear-gradient(180deg, transparent, #03e9f4);
-  animation: btn-anim2 1s linear infinite;
+  animation: btn-animation-2 1s linear infinite;
   animation-delay: .25s
 }
 
-@keyframes btn-anim2 {
+@keyframes btn-animation-2 {
   0% {
     top: -100%;
   }
@@ -134,17 +134,17 @@ body {
   }
 }
 
-.signup-form-container a:hover span:nth-child(3) {
+.signup-form-container p:hover span:nth-child(3) {
   bottom: 0;
   right: -100%;
   width: 100%;
   height: 2px;
   background: linear-gradient(270deg, transparent, #03e9f4);
-  animation: btn-anim3 1s linear infinite;
+  animation: btn-animation-3 1s linear infinite;
   animation-delay: .5s
 }
 
-@keyframes btn-anim3 {
+@keyframes btn-animation-3 {
   0% {
     right: -100%;
   }
@@ -153,17 +153,17 @@ body {
   }
 }
 
-.signup-form-container a:hover span:nth-child(4) {
+.signup-form-container p:hover span:nth-child(4) {
   bottom: -100%;
   left: 0;
   width: 2px;
   height: 100%;
   background: linear-gradient(360deg, transparent, #03e9f4);
-  animation: btn-anim4 1s linear infinite;
+  animation: btn-animation-4 1s linear infinite;
   animation-delay: .75s
 }
 
-@keyframes btn-anim4 {
+@keyframes btn-animation-4 {
   0% {
     bottom: -100%;
   }
