@@ -2,8 +2,8 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import { logout } from '../../store/session';
-import './navbar.css'
 import ProfileButton from '../ProfileButton';
+import './navbar.css'
 
 const Navigation = ({ isLoaded }) => {
   const dispatch = useDispatch()

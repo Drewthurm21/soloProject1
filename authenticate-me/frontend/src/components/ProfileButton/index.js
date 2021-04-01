@@ -23,7 +23,7 @@ function ProfileButton({ user }) {
 
   return (
     <>
-      <div className='navbar-Btn' onClick={openMenu}>
+      <div className='navbar-btn' onClick={openMenu}>
         Profile
       </div>
       {showMenu && (
