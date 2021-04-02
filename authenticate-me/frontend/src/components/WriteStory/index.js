@@ -2,11 +2,11 @@ import { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { getUserStories } from '../../store/stories'
 
-import StoryContainer from '../StoryContainer/'
-// import './mystories.css'
+import RichTextEditor from '../RichTextEditor/'
 
 
-const MyStories = (stories) => {
+
+const WriteStory = (stories) => {
   const dispatch = useDispatch();
 
   const userId = useSelector((state) => state.session.user?.id)
@@ -20,9 +20,11 @@ const MyStories = (stories) => {
 
   return (
     <>
-      <StoryContainer stories={stories} />
+      <div className='flex-container'>
+        <RichTextEditor />
+      </div>
     </>
   )
 }
 
-export default MyStories;
+export default WriteStory;

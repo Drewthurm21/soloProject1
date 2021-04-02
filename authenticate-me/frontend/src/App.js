@@ -10,6 +10,7 @@ import NavBar from "./components/NavBar"
 import Homepage from './components/HomePage/'
 import MyStories from './components/MyStories'
 import Footer from './components/Footer'
+import WriteStory from "./components/WriteStory";
 
 
 function App() {
@@ -32,6 +33,9 @@ function App() {
             </Route>
             <Route path='/mystories'>
               <MyStories />
+            </Route>
+            <Route path='/writestory'>
+              <WriteStory />
             </Route>
             <Route path="/login">
               <LoginForm />

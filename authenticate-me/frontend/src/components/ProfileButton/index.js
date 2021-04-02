@@ -28,17 +28,14 @@ function ProfileButton({ user }) {
       </div>
       {showMenu && (
         <ul className="profile-dropdown">
-          <li>
-            <Link to='/favorites'>Favorite Authors</Link>
+          <li className='profile-btn'>
+            <Link className='profile-btn' to='/mystories'>My Stories</Link>
           </li>
-          <li>
-            <Link to='/mystories'>My Stories</Link>
+          <li className='profile-btn'>
+            <Link className='profile-btn' to='/writestory'>Write a Story</Link>
           </li>
-          <li>
-            <Link to='/profile'>My Profile</Link>
-          </li>
-          <li>
-            <Link to='/profile'>Write a Story</Link>
+          <li className='profile-btn'>
+            <Link className='profile-btn' to='/favorites'>Favorite Authors</Link>
           </li>
         </ul>
       )}

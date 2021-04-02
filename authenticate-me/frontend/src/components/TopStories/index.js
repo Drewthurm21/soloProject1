@@ -2,8 +2,13 @@
 
 const TopStories = ({ stories }) => {
 
+  const
+
+
   return (
-    <div> hello world</div>
+    <div>
+      top stories here
+    </div>
   )
 }
 

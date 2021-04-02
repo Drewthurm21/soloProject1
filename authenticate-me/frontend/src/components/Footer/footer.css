@@ -3,7 +3,7 @@
   display:flex;
   justify-content: space-around;
   border-bottom:1px solid black;
-  top: 0px;
+  bottom: 0px;
   left: 0px;
   width: 100vw;
   background: linear-gradient(#243b55, #141e30);
