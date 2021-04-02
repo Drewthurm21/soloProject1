@@ -30,7 +30,7 @@ const seedFollows = (num) => {
 
   while (i < num) {
     const follow = {
-      userId: randomNumber(100),
+      userId: 104,
       authorId: randomNumber(100),
     }
 
@@ -39,7 +39,7 @@ const seedFollows = (num) => {
   }
 }
 
-seedFollows(300)
+seedFollows(10)
 
 /*                                   SEED STORIES FUNCTION                        */
 
