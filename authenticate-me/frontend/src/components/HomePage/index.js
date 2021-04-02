@@ -5,6 +5,8 @@ const Homepage = () => {
   return (
     <div className='app-grid-container'>
       <StoryContainer />
+      <StoryContainer />
+      <StoryContainer />
     </div>
   )
 }

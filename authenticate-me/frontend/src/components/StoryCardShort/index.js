@@ -10,6 +10,8 @@ const StoryCardShort = ({ story }) => {
       <h3>{story.title}</h3>
       <div>
         <img src={story.img}></img>
+      </div>
+      <div>
         <p>{synopsis}</p>
         <p>{story.authorId}</p>
       </div>

@@ -8,6 +8,7 @@ const load = (stories) => ({
   stories
 })
 
+
 export const getStories = () => async (dispatch) => {
   const response = await fetch(`/api/stories`);
 
@@ -35,8 +36,6 @@ export const getFeedStories = (userId) => async (dispatch) => {
     dispatch(load(stories.feedStories))
   }
 }
-
-
 
 const initialState = {
   stories: []

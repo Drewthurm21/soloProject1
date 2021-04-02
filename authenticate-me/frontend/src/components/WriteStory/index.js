@@ -21,6 +21,9 @@ const WriteStory = (stories) => {
   return (
     <>
       <div className='flex-container'>
+        <div>
+          What's on your mind?
+        </div>
         <RichTextEditor />
       </div>
     </>
