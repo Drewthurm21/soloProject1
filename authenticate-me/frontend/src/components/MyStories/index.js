@@ -20,7 +20,9 @@ const MyStories = (stories) => {
 
   return (
     <>
-      <StoryContainer stories={stories} />
+      <div className=''>
+        <StoryContainer stories={stories} />
+      </div>
     </>
   )
 }

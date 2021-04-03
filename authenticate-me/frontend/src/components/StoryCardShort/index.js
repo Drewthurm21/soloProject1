@@ -8,7 +8,7 @@ const StoryCardShort = ({ story }) => {
   return (
     <div>
       <h3>{story.title}</h3>
-      <div>
+      <div >
         <img src={story.img}></img>
       </div>
       <div>

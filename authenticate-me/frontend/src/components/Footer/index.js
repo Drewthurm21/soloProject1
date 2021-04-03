@@ -4,7 +4,7 @@ const Footer = () => {
 
 
   return (
-    <div className='footer flex-container'>
+    <div className='footer footer-area'>
       <div className='footer'> this is the footer for now</div>
     </div>
   )

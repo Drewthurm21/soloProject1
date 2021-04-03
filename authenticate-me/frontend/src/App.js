@@ -11,7 +11,6 @@ import Homepage from './components/HomePage/'
 import MyStories from './components/MyStories'
 import Footer from './components/Footer'
 import WriteStory from "./components/WriteStory";
-import CarouselTest from './components/CarouselTest'
 
 function App() {
   const dispatch = useDispatch();
@@ -22,10 +21,8 @@ function App() {
 
   return (
     <>
-      <div className='app-grid-container'>
-        <div className='flex-container'>
-          <NavBar className='navBar' isLoaded={isLoaded} />
-        </div>
+      <NavBar className='navbar navbar-area' isLoaded={isLoaded} />
+      <div className='app-wrapper'>
         {isLoaded && (
           <Switch>
             <Route exact path='/'>
@@ -44,12 +41,12 @@ function App() {
               <SignupForm />
             </Route>
             <Route path='/testComponent'>
-              <CarouselTest />
+
             </Route>
           </Switch>
         )}
-        <Footer />
       </div>
+      <Footer />
     </>
   );
 }

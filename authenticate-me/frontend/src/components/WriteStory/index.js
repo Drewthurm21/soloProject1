@@ -8,22 +8,17 @@ import RichTextEditor from '../RichTextEditor/'
 
 const WriteStory = (stories) => {
   const dispatch = useDispatch();
-
   const userId = useSelector((state) => state.session.user?.id)
-  console.log('USERID HERE', userId)
-
 
   useEffect(() => {
     dispatch(getUserStories(userId))
   }, [dispatch])
 
+  if (!userId) return null;
 
   return (
     <>
-      <div className='flex-container'>
-        <div>
-          What's on your mind?
-        </div>
+      <div>
         <RichTextEditor />
       </div>
     </>

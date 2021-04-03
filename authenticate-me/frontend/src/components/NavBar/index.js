@@ -30,7 +30,7 @@ const Navigation = ({ isLoaded }) => {
 
   return (
     <>
-      <nav className='navbar'>
+      <nav className='navbar navbar-area'>
         <NavLink className='navbar-btn' exact to="/">Home</NavLink>
         {isLoaded && sessionLinks}
         {sessionUser && <div className='navbar-btn logout-btn' onClick={logOut}>Log Out</div>}

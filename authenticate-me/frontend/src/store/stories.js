@@ -1,11 +1,15 @@
-
+import csrfFetch from '../store/csrf'
 const LOAD = 'stories/LOAD'
-// const POST = 'stories/POST'
+const POST = 'stories/POST'
 // const DELETE = 'stories/DELETE'
 
 const load = (stories) => ({
   type: LOAD,
   stories
+})
+const post = (story) => ({
+  type: POST,
+  story
 })
 
 
@@ -37,6 +41,21 @@ export const getFeedStories = (userId) => async (dispatch) => {
   }
 }
 
+export const postStory = (story) => async (dispatch) => {
+  console.log(story)
+
+  const response = await csrfFetch(`/api/stories`, {
+    method: 'POST',
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ story })
+  })
+  if (response.ok) {
+
+    console.log(response)
+  }
+}
+
+
 const initialState = {
   stories: []
 }
@@ -48,6 +67,12 @@ const storiesReducer = (state = initialState, action) => {
       return {
         ...state,
         stories: [...action.stories]
+      }
+    }
+    case POST: {
+      return {
+        ...state,
+        stories: [...state.stories, action.story]
       }
     }
     default:

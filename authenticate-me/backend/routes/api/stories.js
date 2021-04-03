@@ -5,7 +5,6 @@ const { Story, User, Like, Follow } = require('../../db/models')
 //return all stories
 router.get('/', asyncHandler(async (req, res) => {
   const result = await Story.findAll()
-
   res.json({ result })
 }))
 
@@ -68,6 +67,22 @@ router.get('/byauthor/:id', asyncHandler(async (req, res) => {
   res.json({ authorStories })
 }))
 
+router.post('/', asyncHandler(async (req, res) => {
+
+  const { authorId, title, img, content, categoryId } = req.body.story
+
+  const story = {
+    authorId,
+    categoryId,
+    title,
+    content,
+    img,
+  }
+
+  await Story.create(story)
+
+  res.json(story)
+}))
 
 
 // //post a new story

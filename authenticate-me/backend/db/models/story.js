@@ -21,7 +21,7 @@ module.exports = (sequelize, DataTypes) => {
       allowNull: false,
     },
     img: {
-      type: DataTypes.STRING(200)
+      type: DataTypes.TEXT,
     }
   }, {});
   Story.associate = function (models) {

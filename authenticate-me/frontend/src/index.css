@@ -1,36 +1,98 @@
-/* TODO Add site wide styles */
+
+body {
+  font-family: sans-serif;
+  background: #141e30;
+}
+
+#root {
+  display: grid;
+  grid-template-columns: 10vw 80vw 10vw ;
+  grid-template-rows: 10vh 1fr 10vh;
+  grid-template-areas:
+  "navbar navbar navbar"
+  ". app ."
+  "footer footer footer";
+  height: 100vh;
+  width:100vw;
+}
+
+
+/* .page-wrapper {
+  display: grid;
+  grid-template-columns: 10vw 80vw 10vw ;
+  grid-template-rows: 10vh 80vh 10vh;
+  grid-template-areas:
+  'navbar navbar navbar'
+  'empty app empty'
+  'footer footer footer';
+  font-family: sans-serif;
+  background: #141e30
+} */
+
+.app-wrapper {
+  grid-area: app;
+  display: grid;
+  overflow-y: scroll;
+  overflow-wrap: normal;
+}
+
+.homepage-grid {
+  display: grid;
+  grid-template: 3fr 5fr / 2fr 4fr;
+  /* grid-template-areas:
+  'mainStory topStories'
+  'userfeed userfeed'; */
+}
+
+.navbar-area {
+  grid-area: navbar;
+}
+
+.footer-area {
+  grid-area: footer;
+} 
+
+/* TODO Add site wide styles
 body {
   font-family: sans-serif;
   background: #141e30
 }
 
-.app-grid-container {
-  display: grid;
-  box-sizing: border-box;
-  grid-template-columns:35px 7fr 35px;
-  grid-template-rows: 1fr 7fr 1fr;
-  height: 100vh;
-  width: 100vw;
-  margin-left: 2%;
-  margin-right: 2%;
-  background: #243b55
+/* .page-wrapper {
+  display: flex;
+  font-family: sans-serif;
+  background: #141e30
 }
 
-.flex-container {
-  display: brder-box;
-  display: grid;
-  overflow-y: scroll;
-  justify-content: center;
-  background: linear-gradient(#243b55, #141e30);
-}
+.app-wrapper {
+  display: flex;
+} */
 
-.profile-btn {
-  color: #03e9f4
+/* .homepage-grid {
+  display: flex;
+  flex-direction: row;
 }
-
-.footer{
-  position: fixed;
+.navbar-area {
+  display: flex;
+}
+.footer-area {
+  display: flex;
+}
+.top-stories{
+  display:flex;
   width: 100%;
-  bottom: 0px;
-  background: linear-gradient(#243b55, #141e30);
+  height: 40vh;
+  flex-direction: row;
+  border: 3px solid yellow;
 }
+.user-feed {
+  display: flex;
+}
+.feature-story{
+ display: flex; 
+ border:3px solid green;
+}
+.top-five {
+  border: 3px solid blue;
+  display: flex;
+} */
