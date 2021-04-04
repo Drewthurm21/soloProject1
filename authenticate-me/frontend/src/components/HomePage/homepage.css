@@ -19,12 +19,11 @@
 }
 
 .user-feed {
-  border: 1px solid #03e9f4;
+  border-top: 2px solid #03e9f4;
   grid-area: userfeed;
   display:flex;
   flex-direction: row;
-  overflow-y: scroll;
-  z-index: 1;
+  flex-wrap: wrap;
 }
 
 .top-story {

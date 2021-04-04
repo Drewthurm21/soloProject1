@@ -8,21 +8,34 @@
   grid-template-rows: repeat(5, 1fr);
   grid-gap: 12px;
   grid-template-areas: 
+  "img . ."
   "img title title"
-  "img content content"
+  ". content content"
+  ". content content"
   ". content content"
 }
 
 .img-div {
-grid-area: img;
+  grid-area: img;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 600px;
+  min-height: 900px;
+}
+
+.img-div img {
+  min-width:400px;
+  min-height:600px;
 }
 
 .title-div {
-grid-area: title;
+  grid-area: title;
 }
 
 .content-div {
- grid-area: content;
+  grid-area: content;
+  overflow-y: scroll;
 }
 
 .Follw-btn {

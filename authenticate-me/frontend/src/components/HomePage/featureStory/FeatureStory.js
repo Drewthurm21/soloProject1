@@ -13,6 +13,9 @@ const FeatureStory = ({ story }) => {
       <div>
         <p>{story.content}</p>
       </div>
+      <br></br>
+      <br></br>
+      <h2>Stories Just For You</h2>
     </div>
   )
 }

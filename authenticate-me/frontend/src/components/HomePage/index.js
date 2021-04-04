@@ -6,6 +6,7 @@ import './homepage.css'
 import StoryContainer from "../StoryContainer"
 import FeatureStory from './featureStory/FeatureStory'
 import TopFour from './topfour/TopFour'
+import UserFeed from './userfeed/UserFeed'
 const Homepage = () => {
 
   const dispatch = useDispatch()
@@ -30,8 +31,8 @@ const Homepage = () => {
         <div className='top-four'>
           <TopFour stories={top4} className='top-four' />
         </div>
-        <div>
-          <StoryContainer className='user-feed' />
+        <div className='user-feed'>
+          <UserFeed stories={stories} className='user-feed' />
         </div>
       </div>
     </>

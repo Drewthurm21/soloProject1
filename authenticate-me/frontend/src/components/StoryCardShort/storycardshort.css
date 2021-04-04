@@ -6,6 +6,7 @@
   align-items: flex-end;
   display: border-box;
   margin: 3px;
+  flex-grow: 1;
 }
 
 .short-story-card-wrap div {
