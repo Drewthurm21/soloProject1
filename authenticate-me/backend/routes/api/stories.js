@@ -62,7 +62,7 @@ router.get('/story/:id', asyncHandler(async (req, res) => {
 //return all stories by an author
 router.get('/byauthor/:id', asyncHandler(async (req, res) => {
   const authorStories = await Story.findAll({
-    where: { authorId: req.params.id }
+    where: { authorId: req.params.id }, include: User
   })
 
   res.json({ authorStories })

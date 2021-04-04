@@ -12,13 +12,13 @@ const Navigation = ({ isLoaded }) => {
   let sessionLinks;
   if (sessionUser) {
     sessionLinks = (
-      <ProfileButton user={sessionUser}>Profile</ProfileButton>
+      <ProfileButton className='btn' user={sessionUser}>Profile</ProfileButton>
     );
   } else {
     sessionLinks = (
       <>
-        <NavLink className='navbar-btn' to="/login">Log In</NavLink>
-        <NavLink className='navbar-btn' to="/signup">Sign Up</NavLink>
+        <NavLink className='navbar-btn btn' to="/login">Log In</NavLink>
+        <NavLink className='navbar-btn btn' to="/signup">Sign Up</NavLink>
       </>
     );
   }
@@ -31,9 +31,9 @@ const Navigation = ({ isLoaded }) => {
   return (
     <>
       <nav className='navbar navbar-area'>
-        <NavLink className='navbar-btn' exact to="/">Home</NavLink>
+        <NavLink className='navbar-btn btn' exact to="/">Home</NavLink>
         {isLoaded && sessionLinks}
-        {sessionUser && <div className='navbar-btn logout-btn' onClick={logOut}>Log Out</div>}
+        {sessionUser && <div className='navbar-btn btn logout-btn' onClick={logOut}>Log Out</div>}
       </nav>
     </>
   );

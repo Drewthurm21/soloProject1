@@ -30,3 +30,7 @@ body {
   grid-area: footer;
 
 } 
+
+.btn:hover {
+  cursor: pointer;
+}

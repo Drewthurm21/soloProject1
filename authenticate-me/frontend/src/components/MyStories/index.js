@@ -4,7 +4,6 @@ import { getUserStories } from '../../store/stories'
 import './mystories.css'
 
 import StoryContainer from '../StoryContainer/'
-// import './mystories.css'
 
 
 const MyStories = (stories) => {

@@ -24,21 +24,22 @@ function ProfileButton({ user }) {
 
   return (
     <>
-      <div className='navbar-btn' onClick={openMenu}>
+      <div className='navbar-btn btn' onClick={openMenu}>
         Profile
       </div>
+
       {showMenu && (
-        <ul className="profile-dropdown">
-          <li className='profile-btn'>
-            <Link className='profile-btn' to='/mystories'>My Stories</Link>
-          </li>
-          <li className='profile-btn'>
-            <Link className='profile-btn' to='/writestory'>Write a Story</Link>
-          </li>
-          <li className='profile-btn'>
-            <Link className='profile-btn' to='/favorites'>Favorite Authors</Link>
-          </li>
-        </ul>
+        <>
+          <div className='profile-btn profile-inner-btn'>
+            <Link className='profile-btn navbar-btn' to='/mystories'>My Stories</Link>
+          </div>
+          <div className='profile-btn profile-inner-btn'>
+            <Link className='profile-btn navbar-btn' to='/writestory'>Write a Story</Link>
+          </div>
+          <div className='profile-btn profile-inner-btn'>
+            <Link className='profile-btn navbar-btn' to='/favorites'>Favorite Authors</Link>
+          </div>
+        </>
       )}
     </>
   );

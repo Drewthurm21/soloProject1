@@ -1,0 +1,10 @@
+.feature {
+  display:flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  margin: 4px;
+}
+
+.feature-story-img {
+  max-width: 70%;
+}

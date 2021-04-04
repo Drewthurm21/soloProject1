@@ -4,14 +4,9 @@ import { getStories } from '../../store/stories'
 import StoryCardShort from '../StoryCardShort'
 
 
-const TopStories = () => {
-  const dispatch = useDispatch()
+const TopStories = ({ stories }) => {
 
-  useEffect(() => {
-    dispatch(getStories())
-  }, [dispatch])
 
-  const stories = useSelector(state => state.stories.stories)
 
   return (
     <>

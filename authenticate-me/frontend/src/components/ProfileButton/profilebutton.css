@@ -1,3 +1,9 @@
-.profile-btn {
+.profile-inner-btn {
+  top: 8px;
+  display: flex;
+  align-items: center;
   color: #03e9f4
+}
+.profile-btn {
+  
 }
