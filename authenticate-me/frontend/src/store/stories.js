@@ -42,9 +42,9 @@ export const getUserStories = (userId) => async (dispatch) => {
   const response = await fetch(`/api/stories/byauthor/${userId}`)
 
   if (response.ok) {
-    const stories = await response.json()
+    const authorStories = await response.json()
 
-    dispatch(load(stories.authorStories))
+    dispatch(load(authorStories))
   }
 }
 

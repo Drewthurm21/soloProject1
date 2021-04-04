@@ -5,7 +5,7 @@ import PostStoryForm from './PostCommentForm'
 import './richtext.css'
 
 
-class RichTextEditor extends React.Component {
+class CommentEditor extends React.Component {
   constructor(props) {
     super(props);
     this.state = { editorState: EditorState.createEmpty() };
@@ -68,21 +68,21 @@ class RichTextEditor extends React.Component {
 
     // If the user changes block type before entering any text, we can
     // either style the placeholder or hide it. Let's just hide it now.
-    let className = 'RichEditor-editor';
+    let className = 'commentEditor-editor';
     var contentState = editorState.getCurrentContent();
     if (!contentState.hasText()) {
       if (contentState.getBlockMap().first().getType() !== 'unstyled') {
-        className += ' RichEditor-hidePlaceholder';
+        className += ' commentEditor-hidePlaceholder';
       }
     }
 
     return (
       <>
-        <div className='rte-wrapper'>
+        <div className='comment-editor-wrapper'>
           <div>
             <PostStoryForm grabText={() => editorState.getCurrentContent().getPlainText()} />
           </div>
-          <div className="RichEditor-root">
+          <div className="comment-editor-root">
             <BlockStyleControls
               editorState={editorState}
               onToggle={this.toggleBlockType}
@@ -212,4 +212,4 @@ const InlineStyleControls = (props) => {
   );
 };
 
-export default RichTextEditor;
+export default CommentEditor;

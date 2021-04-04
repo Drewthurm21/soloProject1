@@ -1,11 +1,11 @@
 const router = require('express').Router();
 const asyncHandler = require('express-async-handler')
-const { Story, User, Like, Follow } = require('../../db/models')
+const { Story, User, Like, Follow, Comment } = require('../../db/models')
 
 //return all stories
 router.get('/', asyncHandler(async (req, res) => {
   const result = await Story.findAll({
-    include: User
+    include: [User, Like, Comment]
   })
   res.json({ result })
 }))
@@ -65,7 +65,7 @@ router.get('/byauthor/:id', asyncHandler(async (req, res) => {
     where: { authorId: req.params.id }, include: User
   })
 
-  res.json({ authorStories })
+  res.json(authorStories)
 }))
 
 router.post('/', asyncHandler(async (req, res) => {

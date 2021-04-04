@@ -2,6 +2,7 @@ import { useEffect } from 'react';
 import { NavLink, useParams } from 'react-router-dom'
 import { useSelector, useDispatch } from 'react-redux';
 import { getStories } from '../../store/stories'
+import PostCommentForm from '../PostComment/PostCommentForm'
 import './singlestorypage.css'
 
 const SingleStoryPage = () => {
@@ -10,12 +11,10 @@ const SingleStoryPage = () => {
     dispatch(getStories())
   }, [dispatch])
 
-
-
   const { storyId } = useParams()
   const story = useSelector(state => state.stories.stories[storyId])
-
   if (!story) return null
+
 
   return (
     <div className='single-story-page'>
@@ -29,6 +28,10 @@ const SingleStoryPage = () => {
       </div>
       <div className='content-div'>
         {story.content}
+      </div>
+      <PostCommentForm />
+      <div className='comments-container'>
+        {story.Comments.map(comment => <p>Comment: {comment.comment}</p>)}
       </div>
     </div>
   )

@@ -8,11 +8,11 @@
   grid-template-rows: repeat(5, 1fr);
   grid-gap: 12px;
   grid-template-areas: 
-  "img . ."
   "img title title"
+  "img content content"
   ". content content"
-  ". content content"
-  ". content content"
+  ". commentForm commentForm"
+  ". comments comments"
 }
 
 .img-div {
@@ -62,4 +62,12 @@
 
 .author-link {
   color: #03e9f4;
+}
+
+.postComment-form-container {
+  grid-area: commentForm;
+}
+
+.comments-container {
+  grid-area: comments;
 }

@@ -7,14 +7,13 @@ import './postcommentform.css'
 
 const randomNumber = (num) => Math.floor(Math.random() * Math.floor(num) + 1)
 
-export const PostStoryForm = ({ grabText }) => {
+export const PostCommentForm = ({ grabText }) => {
   const dispatch = useDispatch();
   const history = useHistory()
   const user = useSelector(state => state.session.user);
   const [title, setTitle] = useState('');
-  const [img, setImg] = useState('');
+  const [comment, setComment] = useState('');
   const [errors, setErrors] = useState([]);
-
 
   if (!user) return <Redirect to="/" />;
 
@@ -26,8 +25,7 @@ export const PostStoryForm = ({ grabText }) => {
       authorId: user.id,
       categoryId: randomNumber(19),
       title,
-      content: storyBody,
-      img,
+      content: comment,
     }
 
     dispatch(postStory(story))
@@ -35,8 +33,8 @@ export const PostStoryForm = ({ grabText }) => {
   }
 
   return (
-    <div className="postStory-form-container">
-      <h2>What's on your mind?</h2>
+    <div className="postComment-form-container">
+      <h2>What did you think of this story?</h2>
       <form>
         <div className='info-box'>
           <input
@@ -51,23 +49,23 @@ export const PostStoryForm = ({ grabText }) => {
         <div className='info-box'>
           <input
             type="text"
-            onChange={(e) => setImg(e.target.value)}
+            onChange={(e) => setComment(e.target.value)}
             required
           />
           <label>
-            Image URL
+            Comment:
           </label>
         </div>
-        <p onClick={handleSubmit}>
+        {!errors.length && <p onClick={handleSubmit}>
           <span></span>
           <span></span>
           <span></span>
           <span></span>
           Submit
-        </p>
+        </p>}
       </form>
     </div>
   )
 }
 
-export default PostStoryForm;
+export default PostCommentForm;
