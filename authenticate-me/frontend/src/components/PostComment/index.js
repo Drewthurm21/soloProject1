@@ -1,7 +1,7 @@
 import React from 'react';
 import { Editor, EditorState, RichUtils, getDefaultKeyBinding } from 'draft-js'
 import '../../../node_modules/draft-js/dist/Draft'
-import PostStoryForm from './PostStoryForm'
+import PostStoryForm from './PostCommentForm'
 import './richtext.css'
 
 

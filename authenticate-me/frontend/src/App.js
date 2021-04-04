@@ -11,6 +11,7 @@ import Homepage from './components/HomePage/'
 import MyStories from './components/MyStories'
 import Footer from './components/Footer'
 import WriteStory from "./components/WriteStory";
+import StoryPage from './components/SingleStoryPage'
 
 function App() {
   const dispatch = useDispatch();
@@ -40,8 +41,8 @@ function App() {
             <Route path='/signup'>
               <SignupForm />
             </Route>
-            <Route path='/testComponent'>
-
+            <Route path='/stories/:storyId'>
+              <StoryPage />
             </Route>
           </Switch>
         )}

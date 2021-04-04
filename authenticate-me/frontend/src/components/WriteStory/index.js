@@ -18,9 +18,7 @@ const WriteStory = (stories) => {
 
   return (
     <>
-      <div>
-        <RichTextEditor />
-      </div>
+      <RichTextEditor />
     </>
   )
 }

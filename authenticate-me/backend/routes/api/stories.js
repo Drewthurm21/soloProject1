@@ -4,14 +4,15 @@ const { Story, User, Like, Follow } = require('../../db/models')
 
 //return all stories
 router.get('/', asyncHandler(async (req, res) => {
-  const result = await Story.findAll()
+  const result = await Story.findAll({
+    include: User
+  })
   res.json({ result })
 }))
 
 //get stories by category
 router.get('/category/:id', asyncHandler(async (req, res) => {
   let storiesByCat = await Story.findAll({ where: { categoryId: req.params.id } })
-
   res.json({ storiesByCat })
 }))
 
@@ -68,7 +69,6 @@ router.get('/byauthor/:id', asyncHandler(async (req, res) => {
 }))
 
 router.post('/', asyncHandler(async (req, res) => {
-
   const { authorId, title, img, content, categoryId } = req.body.story
 
   const story = {
@@ -80,7 +80,6 @@ router.post('/', asyncHandler(async (req, res) => {
   }
 
   await Story.create(story)
-
   res.json(story)
 }))
 

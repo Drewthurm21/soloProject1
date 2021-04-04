@@ -14,13 +14,11 @@ const StoryContainer = () => {
   const stories = useSelector(state => state.stories.stories)
 
   return (
-    <>
-      <div>
-        {stories?.map(story => {
-          return <StoryCardShort key={story.id} story={story} />
-        })}
-      </div>
-    </>
+    <div>
+      {stories?.map(story => {
+        return <StoryCardShort key={story.id} story={story} />
+      })}
+    </div>
   )
 }
 

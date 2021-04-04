@@ -1,0 +1,23 @@
+.short-story-card-wrap {
+  height: 170px;
+  width: 600px;
+  color: 	#f8f8ff;
+  display:flex;
+  align-items: flex-end;
+  display: border-box;
+  margin: 3px;
+}
+
+.short-story-card-wrap div {
+  display: border-box;
+  margin: 3px
+}
+
+.short-story-card-wrap img {
+  height: 120px;
+  width: 200px;
+}
+
+a {
+  color: 	#f8f8ff
+}

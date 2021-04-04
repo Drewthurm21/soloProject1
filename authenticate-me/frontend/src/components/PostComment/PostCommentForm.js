@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Redirect, useHistory } from 'react-router-dom';
 import { postStory } from '../../store/stories'
 
-import './poststoryform.css'
+import './postcommentform.css'
 
 const randomNumber = (num) => Math.floor(Math.random() * Math.floor(num) + 1)
 
@@ -31,7 +31,6 @@ export const PostStoryForm = ({ grabText }) => {
     }
 
     dispatch(postStory(story))
-
     history.push('/mystories')
   }
 

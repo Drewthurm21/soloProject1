@@ -4,44 +4,22 @@ body {
   background: #141e30;
 }
 
-#root {
-  display: grid;
-  grid-template-columns: 10vw 80vw 10vw ;
-  grid-template-rows: 10vh 1fr 10vh;
-  grid-template-areas:
-  "navbar navbar navbar"
-  ". app ."
-  "footer footer footer";
-  height: 100vh;
-  width:100vw;
+::-webkit-scrollbar{
+  width: 12px;
 }
 
-
-/* .page-wrapper {
-  display: grid;
-  grid-template-columns: 10vw 80vw 10vw ;
-  grid-template-rows: 10vh 80vh 10vh;
-  grid-template-areas:
-  'navbar navbar navbar'
-  'empty app empty'
-  'footer footer footer';
-  font-family: sans-serif;
-  background: #141e30
-} */
+::-webkit-scrollbar-thumb{
+  background: #03e9f4;
+  height: 40px;
+  border-radius: 7px;
+}
 
 .app-wrapper {
-  grid-area: app;
-  display: grid;
+  height: 95vh;
+  width: 95vw;
+  margin: auto;
+  display: flex;
   overflow-y: scroll;
-  overflow-wrap: normal;
-}
-
-.homepage-grid {
-  display: grid;
-  grid-template: 3fr 5fr / 2fr 4fr;
-  /* grid-template-areas:
-  'mainStory topStories'
-  'userfeed userfeed'; */
 }
 
 .navbar-area {
@@ -50,49 +28,5 @@ body {
 
 .footer-area {
   grid-area: footer;
+
 } 
-
-/* TODO Add site wide styles
-body {
-  font-family: sans-serif;
-  background: #141e30
-}
-
-/* .page-wrapper {
-  display: flex;
-  font-family: sans-serif;
-  background: #141e30
-}
-
-.app-wrapper {
-  display: flex;
-} */
-
-/* .homepage-grid {
-  display: flex;
-  flex-direction: row;
-}
-.navbar-area {
-  display: flex;
-}
-.footer-area {
-  display: flex;
-}
-.top-stories{
-  display:flex;
-  width: 100%;
-  height: 40vh;
-  flex-direction: row;
-  border: 3px solid yellow;
-}
-.user-feed {
-  display: flex;
-}
-.feature-story{
- display: flex; 
- border:3px solid green;
-}
-.top-five {
-  border: 3px solid blue;
-  display: flex;
-} */

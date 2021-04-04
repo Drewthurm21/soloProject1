@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { getUserStories } from '../../store/stories'
+import './mystories.css'
 
 import StoryContainer from '../StoryContainer/'
 // import './mystories.css'
@@ -10,8 +11,6 @@ const MyStories = (stories) => {
   const dispatch = useDispatch();
 
   const userId = useSelector((state) => state.session.user?.id)
-  console.log('USERID HERE', userId)
-
 
   useEffect(() => {
     dispatch(getUserStories(userId))
@@ -20,7 +19,7 @@ const MyStories = (stories) => {
 
   return (
     <>
-      <div className=''>
+      <div className='mystories-wrap'>
         <StoryContainer stories={stories} />
       </div>
     </>
