@@ -3,7 +3,7 @@ const asyncHandler = require('express-async-handler');
 const { check } = require('express-validator');
 const { handleValidationErrors } = require('../../utils/validation');
 const { setTokenCookie } = require('../../utils/auth');
-const { User } = require('../../db/models');
+const { User, Like, Comment, Follow } = require('../../db/models');
 
 const validateSignup = [
   check('email')
@@ -32,6 +32,15 @@ router.post('', validateSignup, asyncHandler(async (req, res) => {
   await setTokenCookie(res, user);
   return res.json({ user });
 }));
+
+// Return User safe info by ID
+router.get('/:id', asyncHandler(async (req, res) => {
+  const userId = Number(req.params.id)
+  const userInfo = await Follow.findAll({
+    where: { userId },
+  })
+  return res.json(userInfo)
+}))
 
 
 module.exports = router;

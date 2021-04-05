@@ -29,7 +29,7 @@ router.get('/followed/:id', asyncHandler(async (req, res) => {
     order: [['createdAt', 'DESC']]
   })
 
-  res.json({ feedStories })
+  return res.json({ feedStories })
 }))
 
 //get 10 most popular stories 

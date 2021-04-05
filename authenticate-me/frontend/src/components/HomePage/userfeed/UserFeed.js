@@ -1,6 +1,8 @@
 import StoryCardShort from '../../StoryCardShort'
 
 const UserFeed = ({ stories }) => {
+  // console.log(stories)
+  // if (!stories.length < 1) return null
 
   return (
     <>

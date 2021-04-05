@@ -6,9 +6,11 @@ import { getUserStories } from '../../store/stories'
 const UserStories = () => {
   const dispatch = useDispatch();
 
+  const userId = useSelector(state => state.session.user.id)
+
   useEffect(() => {
-    dispatch(getUserStories())
-  }, [dispatch])
+    dispatch(getUserStories(userId))
+  }, [dispatch, userId])
 
   const stories = useSelector(state => state.stories.stories)
 

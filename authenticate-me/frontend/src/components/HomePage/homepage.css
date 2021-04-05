@@ -19,11 +19,14 @@
 }
 
 .user-feed {
+  box-sizing: border-box;
   border-top: 2px solid #03e9f4;
   grid-area: userfeed;
   display:flex;
   flex-direction: row;
   flex-wrap: wrap;
+  margin: 14px;
+  padding: 4px;
 }
 
 .top-story {
@@ -35,4 +38,33 @@
 
 .top-four {
   overflow: hidden;
+}
+
+.feature {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  grid-template-areas: 
+  'img img title'
+  'img img author'
+  'content content content'
+}
+
+.feature > img {
+  grid-area: img;
+  max-width: 85%;
+  max-height: 84%;
+  margin: auto;
+}
+.feature > h1 {
+  margin: auto;
+  grid-area: title;
+}
+.feature > p {
+  margin: auto;
+  grid-area: author;
+}
+
+.feature-story-content {
+  grid-area: content;
 }

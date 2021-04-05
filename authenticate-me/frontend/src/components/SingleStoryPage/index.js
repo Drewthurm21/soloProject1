@@ -12,9 +12,12 @@ const SingleStoryPage = () => {
   }, [dispatch])
 
   const { storyId } = useParams()
-  const story = useSelector(state => state.stories.stories[storyId])
-  if (!story) return null
+  const stories = useSelector(state => state.stories.stories)
 
+  const story = stories.find(story => story.id.toString() === storyId)
+  console.log(story)
+
+  if (!story) return null
 
   return (
     <div className='single-story-page'>
@@ -31,7 +34,7 @@ const SingleStoryPage = () => {
       </div>
       <PostCommentForm />
       <div className='comments-container'>
-        {story.Comments.map(comment => <p>Comment: {comment.comment}</p>)}
+        {story.Comments && story.Comments.map(comment => <p>Comment: {comment.comment}</p>)}
       </div>
     </div>
   )
