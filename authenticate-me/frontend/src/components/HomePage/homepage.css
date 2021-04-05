@@ -42,6 +42,7 @@
 
 .feature {
   display: grid;
+  border-right:1px solid #03e9f4;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(3, 1fr);
   grid-template-areas: 

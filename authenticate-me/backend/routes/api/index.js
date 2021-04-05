@@ -4,12 +4,14 @@ const { restoreUser, setTokenCookie } = require('../../utils/auth.js');
 const usersRouter = require('./users.js');
 const sessionRouter = require('./session.js');
 const storiesRouter = require('./stories.js')
+const commentsRouter = require('./comments.js')
 
 
 //
 router.use('/stories', storiesRouter);
 router.use('/session', sessionRouter);
 router.use('/users', usersRouter);
+router.use('/comments', commentsRouter);
 
 //GET /api/restore-user (test JWT restoration)
 router.get('/restore-user', restoreUser, (req, res) => res.json(req.user));
