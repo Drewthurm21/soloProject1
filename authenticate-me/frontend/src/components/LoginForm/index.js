@@ -17,7 +17,8 @@ export const LoginForm = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     setErrors([]);
-    console.log('this is password', password)
+    if (errors.length > 1) return
+
     return dispatch(sessionActions.login({ credential, password }))
       .catch(async (res) => {
         const data = await res.json();

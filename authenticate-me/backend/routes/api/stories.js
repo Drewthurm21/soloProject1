@@ -25,7 +25,7 @@ router.get('/followed/:id', asyncHandler(async (req, res) => {
   })
 
   const feedStories = await Story.findAll({
-    where: { authorId: favAuthorIds },
+    where: { authorId: favAuthorIds }, include: [User, Like, Comment],
     order: [['createdAt', 'DESC']]
   })
 

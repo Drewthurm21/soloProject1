@@ -25,21 +25,26 @@ const randomNumber = (num) => Math.floor(Math.random() * Math.floor(num) + 1)
 /*                                SEED FOLLOWS FUNCTION                                */
 
 
-// const seedFollows = (num) => {
-//   let i = 0
+const seedFollows = (num) => {
+  let i = 0
 
-//   while (i < num) {
-//     const follow = {
-//       userId: 104,
-//       authorId: randomNumber(100),
-//     }
+  while (i < num) {
+    const follow = {
+      userId: 1,
+      authorId: randomNumber(100),
+    }
+    const follow2 = {
+      userId: 104,
+      authorId: randomNumber(100),
+    }
 
-//     console.log(follow, ',')
-//     i++
-//   }
-// }
+    console.log(follow, ',')
+    console.log(follow2, ',')
+    i++
+  }
+}
 
-// seedFollows(10)
+seedFollows(10)
 
 /*                                   SEED STORIES FUNCTION                        */
 

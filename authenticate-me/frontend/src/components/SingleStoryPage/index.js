@@ -13,8 +13,9 @@ const SingleStoryPage = () => {
 
   const { storyId } = useParams()
   const stories = useSelector(state => state.stories.stories)
+  const user = useSelector(state => state.session.user)
   const story = stories.find(story => story.id.toString() === storyId)
-
+  console.log(user)
   if (!story) return null
 
   return (
@@ -26,7 +27,8 @@ const SingleStoryPage = () => {
         <h1>{story.title}</h1>
         <p>Written by <NavLink className='author-link'
           to={`/`}>{story.User.username}</NavLink></p>
-        <div className='Follw-btn'>follow</div>
+        <div className='Follw-btn'>Follow</div>
+        <div className='Follw-btn'>Like</div>
       </div>
       <div className='content-div'>
         {story.content}

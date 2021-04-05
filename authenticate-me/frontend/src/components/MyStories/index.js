@@ -14,7 +14,7 @@ const MyStories = () => {
 
   useEffect(() => {
     dispatch(getStories(userId))
-  }, [dispatch])
+  }, [dispatch, userId])
 
   const stories = useSelector((state) => state.stories.stories)
   const myStories = stories.filter(story => story.authorId === userId)

@@ -1,15 +1,11 @@
 import { useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { Redirect, useHistory, useParams } from 'react-router-dom';
-import { postStory } from '../../store/stories'
+import { useSelector } from 'react-redux';
+
 import { csrfFetch } from '../../store/csrf'
 import './postcommentform.css'
 
-const randomNumber = (num) => Math.floor(Math.random() * Math.floor(num) + 1)
 
 export const PostCommentForm = ({ storyId }) => {
-  const dispatch = useDispatch();
-  const history = useHistory()
   const user = useSelector(state => state.session.user);
   const [comment, setComment] = useState('');
   const [errors, setErrors] = useState([]);
@@ -18,6 +14,8 @@ export const PostCommentForm = ({ storyId }) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setErrors([])
+    if (!comment.length) return
 
     const cmnt = {
       userId: user.id,
@@ -31,8 +29,8 @@ export const PostCommentForm = ({ storyId }) => {
       body: JSON.stringify(cmnt)
     })
 
-    console.log('COMMENT SENT!')
-
+    if (response.ok) {
+    }
   }
 
   return (

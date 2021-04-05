@@ -20,8 +20,11 @@ export const PostStoryForm = ({ grabText }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    setErrors([])
     const storyBody = grabText()
-
+    if (!title.length) errors.push('Please provide a title.')
+    if (!storyBody.length) errors.push('Please share a story.')
+    if (errors.length > 0) return
     const story = {
       authorId: user.id,
       categoryId: randomNumber(19),
