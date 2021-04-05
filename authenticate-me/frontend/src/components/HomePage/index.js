@@ -10,7 +10,7 @@ import TopFour from './topfour/TopFour'
 import UserFeed from './userfeed/UserFeed'
 
 
-const Homepage = () => {
+const Homepage = ({ userId }) => {
 
   const dispatch = useDispatch()
 
@@ -27,7 +27,7 @@ const Homepage = () => {
   })
 
   const stories = useSelector(state => state.stories.stories)
-  const userId = useSelector(state => state.session.user.id)
+  const curUser = useSelector(state => state.session.user)
   const feedStories = useSelector(state => state.stories.userFeed)
 
   const sorted = stories?.sort((s1, s2) => s2.Likes.length - s1.Likes.length)

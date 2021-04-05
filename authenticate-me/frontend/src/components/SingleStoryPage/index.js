@@ -24,7 +24,8 @@ const SingleStoryPage = () => {
       </div>
       <div className='title-div'>
         <h1>{story.title}</h1>
-        <p>Written by <NavLink className='author-link' to={`/`}>{story.User.username}</NavLink></p>
+        <p>Written by <NavLink className='author-link'
+          to={`/`}>{story.User.username}</NavLink></p>
         <div className='Follw-btn'>follow</div>
       </div>
       <div className='content-div'>

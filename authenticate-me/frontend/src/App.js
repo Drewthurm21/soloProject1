@@ -29,7 +29,7 @@ function App() {
         {isLoaded && (
           <Switch>
             <Route exact path='/'>
-              <Homepage />
+              <Homepage userId={1} />
             </Route>
             <Route path='/mystories'>
               <MyStories />
