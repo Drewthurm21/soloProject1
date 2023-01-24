@@ -1,14 +1,13 @@
-
 body {
   font-family: sans-serif;
-  background: #141e30;
+  background: white;
 }
 
-::-webkit-scrollbar{
+::-webkit-scrollbar {
   width: 12px;
 }
 
-::-webkit-scrollbar-thumb{
+::-webkit-scrollbar-thumb {
   background: #03e9f4;
   height: 40px;
   border-radius: 7px;
@@ -28,8 +27,7 @@ body {
 
 .footer-area {
   grid-area: footer;
-
-} 
+}
 
 .btn:hover {
   cursor: pointer;

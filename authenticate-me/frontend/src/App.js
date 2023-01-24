@@ -16,9 +16,9 @@ import StoryPage from './components/SingleStoryPage'
 function App() {
   const dispatch = useDispatch();
   const [isLoaded, setIsLoaded] = useState(false);
+
   useEffect(() => {
     dispatch(sessionActions.restoreUser()).then(() => setIsLoaded(true));
-
   }, [dispatch]);
 
   return (
@@ -36,7 +36,7 @@ function App() {
             <Route path='/writestory'>
               <WriteStory />
             </Route>
-            <Route path="/login">
+            <Route path='/login'>
               <LoginForm />
             </Route>
             <Route path='/signup'>

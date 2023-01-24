@@ -10,25 +10,25 @@ module.exports = {
       */
     return queryInterface.bulkInsert('Follows', [
       { userId: 1, authorId: 43 },
-      { userId: 104, authorId: 26 },
+      { userId: 103, authorId: 26 },
       { userId: 1, authorId: 16 },
-      { userId: 104, authorId: 15 },
+      { userId: 103, authorId: 15 },
       { userId: 1, authorId: 72 },
-      { userId: 104, authorId: 95 },
+      { userId: 103, authorId: 95 },
       { userId: 1, authorId: 34 },
-      { userId: 104, authorId: 80 },
+      { userId: 103, authorId: 80 },
       { userId: 1, authorId: 30 },
-      { userId: 104, authorId: 96 },
+      { userId: 103, authorId: 96 },
       { userId: 1, authorId: 23 },
-      { userId: 104, authorId: 30 },
+      { userId: 103, authorId: 30 },
       { userId: 1, authorId: 54 },
-      { userId: 104, authorId: 9 },
+      { userId: 103, authorId: 9 },
       { userId: 1, authorId: 7 },
-      { userId: 104, authorId: 38 },
+      { userId: 103, authorId: 38 },
       { userId: 1, authorId: 89 },
-      { userId: 104, authorId: 50 },
+      { userId: 103, authorId: 50 },
       { userId: 1, authorId: 27 },
-      { userId: 104, authorId: 45 }
+      { userId: 103, authorId: 45 }
     ], {});
   },
 

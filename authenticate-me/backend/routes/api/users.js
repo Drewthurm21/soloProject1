@@ -3,7 +3,7 @@ const asyncHandler = require('express-async-handler');
 const { check } = require('express-validator');
 const { handleValidationErrors } = require('../../utils/validation');
 const { setTokenCookie } = require('../../utils/auth');
-const { User, Like, Comment, Follow } = require('../../db/models');
+const { User, Follow } = require('../../db/models');
 
 const validateSignup = [
   check('email')
@@ -40,22 +40,7 @@ router.get('/:id', asyncHandler(async (req, res) => {
     where: { userId },
   })
   return res.json(userInfo)
-}))
+}));
 
 
 module.exports = router;
-
-/*                                      TEST FETCH                                      */
-
-// fetch('/api/users', {
-//   method: 'POST',
-//   headers: {
-//     "Content-Type": "application/json",
-//     "XSRF-TOKEN": `<value of XSRF-TOKEN cookie>`
-//   },
-//   body: JSON.stringify({
-//     email: 'spidey@spider.man',
-//     username: 'Spidey',
-//     password: 'password'
-//   })
-// }).then(res => res.json()).then(data => console.log(data));

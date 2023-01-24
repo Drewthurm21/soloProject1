@@ -1,12 +1,12 @@
 .footer {
   position: fixed;
-  color: #fff;
-  display:flex;
+  color: #000;
+  display: flex;
   justify-content: space-around;
-  border-bottom:1px solid black;
+  border-bottom: 1px solid black;
   bottom: 0px;
   left: 0px;
   height: 2em;
   width: 100vw;
-  background: linear-gradient(#141e30, #243b55 );
+  background: linear-gradient(#141e30, #243b55);
 }

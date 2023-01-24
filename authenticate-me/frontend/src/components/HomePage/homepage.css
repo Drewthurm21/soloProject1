@@ -1,5 +1,5 @@
 .homepage-grid {
-  display:flex;
+  display: flex;
   flex-direction: column;
   align-items: center;
 }
@@ -7,22 +7,22 @@
 .homepage-grid2 {
   color: rgb(211, 214, 226);
   block-size: border-box;
-  margin: 7px;
-  padding: 7px;
+  max-width: 70vw;
+  margin-left: 15vw;
   display: grid;
-  grid-template-columns: 3fr 2fr;
+  grid-template-columns: 3fr 1.5fr;
   grid-template-rows: 63% auto;
   grid-gap: 5px;
-  grid-template-areas: 
-  "feature top5"
-  "userfeed userfeed"
+  grid-template-areas:
+    "feature top5"
+    "userfeed userfeed";
 }
 
 .user-feed {
   box-sizing: border-box;
   border-top: 2px solid #03e9f4;
   grid-area: userfeed;
-  display:flex;
+  display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   margin: 14px;
@@ -31,7 +31,7 @@
 
 .top-story {
   grid-area: feature;
-  overflow-y:scroll;
+  overflow-y: scroll;
   display: flex;
   height: 60vh;
 }
@@ -42,13 +42,13 @@
 
 .feature {
   display: grid;
-  border-right:1px solid #03e9f4;
+  border-right: 1px solid #03e9f4;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(3, 1fr);
-  grid-template-areas: 
-  'img img title'
-  'img img author'
-  'content content content'
+  grid-template-areas:
+    "img img title"
+    "img img author"
+    "content content content";
 }
 
 .feature > img {

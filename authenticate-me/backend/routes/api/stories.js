@@ -1,75 +1,75 @@
 const router = require('express').Router();
-const asyncHandler = require('express-async-handler')
-const { Story, User, Like, Follow, Comment } = require('../../db/models')
+const asyncHandler = require('express-async-handler');
+const { Story, User, Like, Follow, Comment } = require('../../db/models');
 
 //return all stories
 router.get('/', asyncHandler(async (req, res) => {
   const result = await Story.findAll({
     include: [User, Like, Comment]
   })
-  res.json({ result })
-}))
+  res.json({ result });
+}));
 
 //get stories by category
 router.get('/category/:id', asyncHandler(async (req, res) => {
-  let storiesByCat = await Story.findAll({ where: { categoryId: req.params.id } })
-  res.json({ storiesByCat })
-}))
+  let storiesByCat = await Story.findAll({ where: { categoryId: req.params.id } });
+  res.json({ storiesByCat });
+}));
 
 //return stories by followed Authors
 router.get('/followed/:id', asyncHandler(async (req, res) => {
-  let favAuthors = await Follow.findAll({ where: { userId: req.params.id } })
+  let favAuthors = await Follow.findAll({ where: { userId: req.params.id } });
 
   const favAuthorIds = favAuthors.map(author => {
     return author.authorId
-  })
+  });
 
   const feedStories = await Story.findAll({
     where: { authorId: favAuthorIds }, include: [User, Like, Comment],
     order: [['createdAt', 'DESC']]
-  })
+  });
 
-  return res.json({ feedStories })
-}))
+  return res.json({ feedStories });
+}));
 
 //get 10 most popular stories 
 router.get('/top', asyncHandler(async (req, res) => {
-  let stories = await Story.findAll({ include: Like })
+  let stories = await Story.findAll({ include: Like });
 
-  stories.sort((a, b) => b.Likes.length - a.Likes.length)
-  topStories = stories.slice(0, 10)
+  stories.sort((a, b) => b.Likes.length - a.Likes.length);
+  topStories = stories.slice(0, 10);
 
-  res.json({ topStories })
-}))
+  res.json({ topStories });
+}));
 
 //return 15 newest stories
 router.get('/recent', asyncHandler(async (req, res) => {
   let newStories = await Story.findAll({
     order: [['updatedAt', 'DESC']],
     limit: 15
-  })
+  });
 
-  res.json({ newStories })
-}))
+  res.json({ newStories });
+}));
 
 //return a single story by id
 router.get('/story/:id', asyncHandler(async (req, res) => {
-  const story = await Story.findByPk(req.params.id)
-  res.json({ story })
-}))
+  const story = await Story.findByPk(req.params.id);
+  res.json({ story });
+}));
 
 
 //return all stories by an author
 router.get('/byauthor/:id', asyncHandler(async (req, res) => {
   const authorStories = await Story.findAll({
     where: { authorId: req.params.id }, include: User
-  })
+  });
 
-  res.json(authorStories)
-}))
+  res.json(authorStories);
+}));
 
 router.post('/', asyncHandler(async (req, res) => {
-  const { authorId, title, img, content, categoryId } = req.body.story
+  const { authorId, title, img, content, categoryId } = req.body.story;
 
   const story = {
     authorId,
@@ -77,15 +77,11 @@ router.post('/', asyncHandler(async (req, res) => {
     title,
     content,
     img,
-  }
+  };
 
-  await Story.create(story)
-  res.json(story)
-}))
+  await Story.create(story);
+  res.json(story);
+}));
 
-
-// //post a new story
-// router.post('/post', asyncHandler(async (req, res) => {
-// }))
 
 module.exports = router;

@@ -4,7 +4,6 @@ import sessionReducer from './session';
 import storiesReducer from './stories';
 import userReducer from './user';
 
-
 const rootReducer = combineReducers({
   session: sessionReducer,
   stories: storiesReducer,
