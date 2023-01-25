@@ -1,69 +1,79 @@
 const { faker } = require('@faker-js/faker');
 const bcrypt = require('bcryptjs');
 
-const randomNumber = (num) => Math.floor(Math.random() * Math.floor(num) + 1)
+//simple random number generator
+const rNum = (num) => Math.floor(Math.random() * Math.floor(num) + 1)
+
 
 const seedUsers = (num) => {
   let users = new Array(num).fill('')
+
   for (const i in users) {
     users[i] = {
-      email: faker.internet.email(),
       username: faker.internet.userName(),
+      email: faker.internet.email(),
       hashedPassword: bcrypt.hashSync(faker.internet.password())
     }
   }
+
   return users
 }
 
+
 const seedFollows = (num) => {
   let follows = new Array(num).fill('')
-  for (const i in follows) follows[i] = { userId: 1, authorId: randomNumber(100) }
+  for (const i in follows) { follows[i] = { userId: rNum(100), authorId: rNum(100) } }
   return follows
 }
 
+
 const seedStories = (num) => {
-  let stories = new Array(num).fill('.')
+  let stories = new Array(num).fill('')
+
   for (const i in stories) {
-    story[i] = {
-      authorId: randomNumber(100),
-      categoryId: randomNumber(20),
-      title: 'Short Article',
-      content: faker.lorem.paragraphs(2),
-      img: faker.image.business(240, 160)
+    stories[i] = {
+      authorId: rNum(100),
+      categoryId: rNum(20),
+      title: faker.lorem.sentence(3),
+      content: faker.lorem.paragraph(rNum(10)),
+      img: faker.image.cats()
     }
   }
 
   return stories
 }
 
+
 const seedLikes = (num) => {
-  let likes = new Array(num).fill('.')
+  let likes = new Array(num).fill('')
+
   for (const i in likes) {
-    likes[i] = {
-      userId: randomNumber(99),
-      postId: randomNumber(199),
-      liked: true,
-    }
+    likes[i] = { userId: rNum(100), postId: rNum(500), liked: true }
   }
+
   return likes
 }
 
+
 const seedComments = (num) => {
   let comments = new Array(num).fill('')
+
   for (const i in comments) {
     comments[i] = {
-      userId: randomNumber(100),
-      articleId: randomNumber(150),
-      comment: faker.lorem.sentences(1)
+      userId: rNum(100),
+      articleId: rNum(500),
+      comment: faker.lorem.sentence(5)
     }
   }
+
   return comments
 }
 
 module.exports = {
-  seedComments,
-  seedFollows,
-  seedLikes,
-  seedStories,
   seedUsers,
+  seedFollows,
+  seedStories,
+  seedLikes,
+  seedComments
 }
+
